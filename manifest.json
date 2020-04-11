@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "Shortcuts",
+  "version": "0.1.0",
+  "author": "seankhliao",
+  "icons": {
+    "48": "icon-48.png",
+    "192": "icon-192.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": ["backspace.js"],
+      "matches": ["<all_urls>"],
+      "run_at": "document_start"
+    }
+  ],
+  "commands": {
+    "close-tabs-left": {
+      "description": "close tabs to left",
+      "suggested_key": {
+        "default": "Alt+Left"
+      }
+    },
+    "close-tabs-right": {
+      "description": "close tabs to right",
+      "suggested_key": {
+        "default": "Alt+Right"
+      }
+    },
+    "close-tabs-other": {
+      "description": "close other tabs",
+      "suggested_key": {
+        "default": "Alt+O"
+      }
+    }
+  },
+  "permissions": ["tabs"]
+}
